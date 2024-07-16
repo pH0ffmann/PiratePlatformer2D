@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bh3tpxnv504ap"]
+
+[ext_resource type="PackedScene" uid="uid://co51cylhvxpmt" path="res://throwables/components/throwable_component.tscn" id="1_7fi0g"]
+[ext_resource type="Texture2D" uid="uid://b0yfcyiittv78" path="res://throwables/character_sword/spinning/1.png" id="2_lx51f"]
+[ext_resource type="Script" path="res://throwables/character_sword/character_sword.gd" id="2_magda"]
+[ext_resource type="Texture2D" uid="uid://wt1o4n4rue1r" path="res://throwables/character_sword/spinning/2.png" id="3_vqsao"]
+[ext_resource type="Texture2D" uid="uid://wc552x72o2f4" path="res://throwables/character_sword/spinning/3.png" id="4_xv7xy"]
+[ext_resource type="Texture2D" uid="uid://bhemoeigd1nc4" path="res://throwables/character_sword/spinning/4.png" id="5_hqu5b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bxp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lx51f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vqsao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xv7xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hqu5b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ti2x"]
+
+[node name="CharacterSword" instance=ExtResource("1_7fi0g")]
+script = ExtResource("2_magda")
+move_speed = 250.0
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_0bxp3")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("CircleShape2D_1ti2x")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://danx3cvure484"]
+
+[ext_resource type="Script" path="res://visual_effects/components/base_effect.gd" id="1_gsms3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_luhfn"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="BaseEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_luhfn")
+autoplay = "default"
+script = ExtResource("1_gsms3")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
