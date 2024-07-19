@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpwv5akflhumr"]
+
+[ext_resource type="Script" path="res://entities/components/base_enemy.gd" id="1_5cn61"]
+[ext_resource type="Script" path="res://entities/components/enemy_texture.gd" id="2_pfnma"]
+[ext_resource type="Script" path="res://entities/components/enemy_attack_area.gd" id="3_ow2nh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qj0i"]
+
+[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("enemy_texture", "floor_detection_ray", "knockback_timer")]
+script = ExtResource("1_5cn61")
+enemy_texture = NodePath("Texture")
+floor_detection_ray = NodePath("FloorDetectionRay")
+knockback_timer = NodePath("KnockbackTimer")
+knockback_speed = 128.0
+
+[node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("enemy", "attack_area_collision")]
+sprite_frames = SubResource("SpriteFrames_8qj0i")
+script = ExtResource("2_pfnma")
+enemy = NodePath("..")
+attack_area_collision = NodePath("../AttackArea/Collision")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="FloorDetectionRay" type="RayCast2D" parent="."]
+target_position = Vector2(0, 16)
+
+[node name="AttackArea" type="Area2D" parent="."]
+script = ExtResource("3_ow2nh")
+
+[node name="Collision" type="CollisionShape2D" parent="AttackArea"]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="DetectionArea"]
+
+[node name="KnockbackTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
+[connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]
+[connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]

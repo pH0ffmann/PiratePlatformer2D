@@ -12,3 +12,5 @@
 
 [node name="Character" parent="." instance=ExtResource("3_4qy10")]
 position = Vector2(18, 21)
+
+[node name="Enemies" type="Node2D" parent="."]

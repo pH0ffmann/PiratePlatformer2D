@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://ccqpqrck6cm1y"]
+[gd_scene load_steps=75 format=3 uid="uid://ccqpqrck6cm1y"]
 
 [ext_resource type="Texture2D" uid="uid://c5qhrk0rbvm7f" path="res://character/without_sword/idle/1.png" id="1_gkkab"]
 [ext_resource type="Script" path="res://character/character.gd" id="1_gn38b"]
@@ -39,21 +39,38 @@
 [ext_resource type="Texture2D" uid="uid://gnxihojncyyw" path="res://character/without_sword/run/4.png" id="16_88j4f"]
 [ext_resource type="Texture2D" uid="uid://c45icd6yq3ats" path="res://character/with_sword/jump/1.png" id="16_ingr6"]
 [ext_resource type="Texture2D" uid="uid://cc08eoahbjjrm" path="res://character/with_sword/jump/2.png" id="17_1rqa1"]
+[ext_resource type="Texture2D" uid="uid://b6rvhtimrg82j" path="res://character/without_sword/dead_ground/1.png" id="17_4dpny"]
 [ext_resource type="Texture2D" uid="uid://bf7y8eqoaaso3" path="res://character/without_sword/run/5.png" id="17_ymmcb"]
+[ext_resource type="Texture2D" uid="uid://q7bbas6vvbjl" path="res://character/without_sword/dead_ground/2.png" id="18_2lv32"]
 [ext_resource type="Texture2D" uid="uid://ddo2hg2e7jkrw" path="res://character/with_sword/jump/3.png" id="18_o8o1u"]
 [ext_resource type="Texture2D" uid="uid://m2sh4holksa2" path="res://character/without_sword/run/6.png" id="18_yfwap"]
+[ext_resource type="Texture2D" uid="uid://cv6y2obfqepp3" path="res://character/without_sword/dead_ground/3.png" id="19_0c04s"]
 [ext_resource type="Script" path="res://character/character_texture.gd" id="19_guxhi"]
+[ext_resource type="Texture2D" uid="uid://biyknv6pux4b8" path="res://character/without_sword/dead_ground/4.png" id="20_vhr35"]
+[ext_resource type="Texture2D" uid="uid://pnao0usrc0e5" path="res://character/without_sword/dead_hit/1.png" id="21_tk013"]
+[ext_resource type="Texture2D" uid="uid://stvmch5d5qjb" path="res://character/without_sword/dead_hit/2.png" id="22_fu8dg"]
 [ext_resource type="Texture2D" uid="uid://budn0itxnwiyr" path="res://character/with_sword/land/1.png" id="22_ollnl"]
+[ext_resource type="Texture2D" uid="uid://dtuks4s7nlb4n" path="res://character/without_sword/dead_hit/3.png" id="23_edu2r"]
 [ext_resource type="Texture2D" uid="uid://mqiwef65xmjy" path="res://character/with_sword/land/2.png" id="23_p2j45"]
+[ext_resource type="Texture2D" uid="uid://d2irqambloxse" path="res://character/without_sword/dead_hit/4.png" id="24_2phmr"]
 [ext_resource type="Texture2D" uid="uid://d1vxvnhjwpq1o" path="res://character/with_sword/run/1.png" id="27_d1o0v"]
+[ext_resource type="Texture2D" uid="uid://dxop5i1k5jrow" path="res://character/without_sword/hit/1.png" id="27_ir0xl"]
+[ext_resource type="Texture2D" uid="uid://dwemjmwg70vo5" path="res://character/without_sword/hit/2.png" id="28_go7lq"]
 [ext_resource type="Texture2D" uid="uid://cylkfn156tgx" path="res://character/with_sword/run/2.png" id="28_vd8wd"]
 [ext_resource type="Texture2D" uid="uid://cucx1bfvo38wi" path="res://character/with_sword/run/3.png" id="29_h3gx0"]
+[ext_resource type="Texture2D" uid="uid://bsexswgptvkce" path="res://character/without_sword/hit/3.png" id="29_nr8iv"]
+[ext_resource type="Texture2D" uid="uid://d2p50n5x36edu" path="res://character/without_sword/hit/4.png" id="30_4bqij"]
 [ext_resource type="Texture2D" uid="uid://behjwwas348b2" path="res://character/with_sword/run/4.png" id="30_h8nfl"]
+[ext_resource type="Texture2D" uid="uid://2n6wu1qdpdw1" path="res://character/with_sword/hit/1.png" id="31_728rc"]
 [ext_resource type="Texture2D" uid="uid://bk7jvpwlnd0sm" path="res://character/with_sword/run/5.png" id="31_k4j1l"]
 [ext_resource type="Texture2D" uid="uid://c0iablljb7ucw" path="res://character/with_sword/run/6.png" id="32_2jvrk"]
+[ext_resource type="Texture2D" uid="uid://ce2d28g307cg2" path="res://character/with_sword/hit/2.png" id="32_nokjh"]
+[ext_resource type="Texture2D" uid="uid://q6vmcgpelx81" path="res://character/with_sword/hit/3.png" id="33_xspca"]
+[ext_resource type="Texture2D" uid="uid://bg0qm0ui3sxae" path="res://character/with_sword/hit/4.png" id="34_so6kb"]
 [ext_resource type="Texture2D" uid="uid://bcfpxa8ry47xe" path="res://character/with_sword/throw_sword/1.png" id="51_1p4i2"]
 [ext_resource type="Texture2D" uid="uid://dmvum0lyssb06" path="res://character/with_sword/throw_sword/2.png" id="52_1jubl"]
 [ext_resource type="Texture2D" uid="uid://bev0dhx6nack3" path="res://character/with_sword/throw_sword/3.png" id="53_wab2w"]
+[ext_resource type="Script" path="res://character/character_attack_area.gd" id="55_mwk3o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_feqou"]
 animations = [{
@@ -129,6 +146,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("17_4dpny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2lv32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0c04s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vhr35")
+}],
+"loop": false,
+"name": &"dead_ground",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_tk013")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_fu8dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_edu2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2phmr")
+}],
+"loop": false,
+"name": &"dead_hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_bbg8a")
 }],
 "loop": true,
@@ -141,6 +192,40 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall_with_sword",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_ir0xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_go7lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_nr8iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_4bqij")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_728rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_nokjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xspca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_so6kb")
+}],
+"loop": false,
+"name": &"hit_with_sword",
 "speed": 10.0
 }, {
 "frames": [{
@@ -300,17 +385,17 @@ size = Vector2(16, 22)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ijfbn"]
 radius = 16.0
 
-[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("chacacter_texture", "attack_combo")]
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("collision", "chacacter_texture", "attack_combo", "knockback_timer")]
 script = ExtResource("1_gn38b")
+collision = NodePath("Collision")
 chacacter_texture = NodePath("Texture")
 attack_combo = NodePath("AttackCombo")
+knockback_timer = NodePath("KnockbackTimer")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("character", "attack_area_collision")]
 sprite_frames = SubResource("SpriteFrames_feqou")
-animation = &"attack_3_with_sword"
+animation = &"dead_hit"
 autoplay = "idle"
-frame = 2
-frame_progress = 1.0
 script = ExtResource("19_guxhi")
 character = NodePath("..")
 attack_area_collision = NodePath("../AttackArea/Collision")
@@ -324,12 +409,20 @@ shape = SubResource("RectangleShape2D_kipv8")
 one_shot = true
 
 [node name="AttackArea" type="Area2D" parent="."]
+script = ExtResource("55_mwk3o")
+attack_damage = 2
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(24, 0)
 shape = SubResource("CircleShape2D_ijfbn")
 disabled = true
 
+[node name="KnockbackTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]
 [connection signal="timeout" from="AttackCombo" to="." method="_on_attack_combo_timeout"]
+[connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
+[connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]
